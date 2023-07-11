@@ -1,5 +1,5 @@
-# RiSC
-This repository hosts Matlab code for odenRiSC and mcRiSC.
+# RiSC - Riemannian Spectral Clustering -
+This repository hosts Matlab code for outlier detection RiSC (odenRiSC) and multimodal classifier RiSC (mcRiSC).
 
 #### Toolboxes we use
 Note that to use odenRiSC/mcRiSC, you need the Matlab Riemannian geometry toolbox by Alexandre Barachant, available here: 
