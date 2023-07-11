@@ -1,5 +1,5 @@
 function [L, D]=creat_similarity_graph(g_type, SCM)
-%%     Function to create knn or full-connected similarity graph 
+%%     Function to create knn or full-connected similarity graph
 %
 %       Parameters
 %       ----------
@@ -7,7 +7,7 @@ function [L, D]=creat_similarity_graph(g_type, SCM)
 %           Defines the graph type
 %       SCM : 4-D array
 %           Set of SCMs
-%           
+%
 %
 %       Returns
 %       -------
@@ -56,14 +56,14 @@ if g_type=="knn"
         end
         [~, ind]=sort(dis_set);
         knn_ind=ind(2:knn_k+1)';
-        % If node i is knn of A , add 1 to the corresponding element 
+        % If node i is knn of A , add 1 to the corresponding element
         % in the adjacency matrix
         W(i, knn_ind)=1;
         W(knn_ind, i)=1;
     end
 
     % Add simirality weight on knn graph
-    [row,col] = find((triu(W, 1))'); 
+    [row,col] = find((triu(W, 1))');
     for i=1:size(row, 1)
         % Compute pairwise Riemannian distance
         temp=distance_riemann(node(:,:,col(i)), node(:,:,row(i)));
@@ -73,14 +73,13 @@ if g_type=="knn"
     end
 
     % Check if the given adjacency matrix is symmetric
-        if issymmetric(W)==1
-            disp('knn graph is created sucessifully');
-        else
-            warning('the given knn graph is not symmetric');
-        end
-   
+    if issymmetric(W)==1
+        disp('knn graph is created sucessifully');
+    else
+        warning('the given knn graph is not symmetric');
+    end
 
-
+    
 elseif g_type=="full"
     [x,y] = find((triu(ones(n_node), 1))');
     node_pair_list = [x, y];

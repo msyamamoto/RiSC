@@ -4,7 +4,7 @@ function [clust_label, n_clust]=spectral_clustering(L, D, sc_type, n_max_clust)
 %       Parameters
 %       ----------
 %       L : n_node x n_node array
-%           Graph Laplacian 
+%           Graph Laplacian
 %       D : n_node x n_node array
 %           Degree matrix
 %       sc_type : {"unnorm", "norm"}
@@ -19,7 +19,7 @@ function [clust_label, n_clust]=spectral_clustering(L, D, sc_type, n_max_clust)
 %       n_clust : doubles
 %           Number of clusters
 %
-% Author: Maria Sayu Yamamoto (2023) 
+% Author: Maria Sayu Yamamoto (2023)
 % <maria-sayu.yamamoto@universite-paris-saclay.fr>
 
 
