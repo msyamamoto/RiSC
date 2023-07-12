@@ -7,7 +7,7 @@ function [clust_result, outlier_ind] = odenRiSC(g_type, sc_type, SCMs)
 %           Defines the graph type
 %       sc_type : {"unnorm", "norm"}
 %           Defines unnormalized or normalized spectral clustering (sc)
-%       SCM : 4-D array
+%       SCM : n_ch x n_ch x n_SCMs array
 %           Set of SCMs
 %
 %       Returns
