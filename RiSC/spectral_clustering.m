@@ -1,4 +1,4 @@
-function [clust_label, n_clust]=spectral_clustering(L, D, sc_type, n_max_clust)
+function [clust_label, n_clust]=spectral_clustering(L, D, sc_type)
 %%     Function to apply spectral clustering on the similarity graph
 %
 %       Parameters
@@ -9,8 +9,6 @@ function [clust_label, n_clust]=spectral_clustering(L, D, sc_type, n_max_clust)
 %           Degree matrix
 %       sc_type : {"unnorm", "norm"}
 %           Defines unnormalized or normalized spectral clustering (sc)
-%       n_max_clust : doubles
-%           Parameters for maximum possible number of clusters
 %
 %       Returns
 %       -------
@@ -33,15 +31,17 @@ end
 % Make sure the eigenvalue is aligned in ascending order
 [L_eigvalue,ind]=sort(diag(L_eigvalue),'ascend');
 
+% Eigengap heuristic
 eigengaps = zeros(length(L_eigvalue)-1,1);
 for i=1:1:length(L_eigvalue)
-    if i > n_max_clust
+    if i > 5 % Maximum possible number of clusters is set to 5
         eigengaps(i)=-1;
     else
         eigengaps(i)=L_eigvalue(i+1)-L_eigvalue(i);
     end
 end
 
+% Determine the number of clusters
 [~, k] = max(eigengaps);
 n_clust = k;
 disp(['n_clust = ' num2str(k)]);
