@@ -11,5 +11,5 @@ If you use this code, please cite the following:
 
 [1] Yamamoto, M.S., Sadatnejad, K., Tanaka, T., Islam, Md. R., Dehais, F., Tanaka, Y., & Lotte, F. (2023), Modeling complex EEG data distribution on Riemannian manifold toward outlier detection and multimodal classification, IEEE Transactions on Biomedical Engineering
 
-## News (As of July 2023)
+## What’s new (As of July 2023)
 Currently, only function codes are available. A script to run the example experiment will be uploaded with the public dataset soon.
